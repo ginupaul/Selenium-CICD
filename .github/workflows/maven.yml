@@ -20,7 +20,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-     steps:
     - name: Check out Repository
       uses: actions/checkout@v3
     - name: Set up JDK
@@ -33,12 +32,6 @@ jobs:
       shell: bash
       run: mvn clean install
     - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
